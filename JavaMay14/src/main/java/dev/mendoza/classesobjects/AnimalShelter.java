@@ -19,5 +19,17 @@ public class AnimalShelter  {
 		
 		System.out.println(myDog.name);
 		System.out.println(notMyDog.name);
+		
+		Dog[] dogArray = new Dog[3];
+		dogArray[0] = myDog;
+		dogArray[1] = notMyDog;
+		
+		for(Dog d : dogArray) {
+			System.out.println(d);
+		}
+		
+		// When printing an object - we are implicitly calling the .toString() method on it
+		// toString() is a method provided by the Object Class
+		// 
 	}
 }

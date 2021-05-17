@@ -71,6 +71,14 @@ public class Dog {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return "Dog [name = " + this.name +
+			        ", breed = " + this.breed +
+			        ", age = " + this.age + 
+			        ", isFed = " + this.isFed + "]";
+	}
+	
 	public void bark(String s) {
 		System.out.println("We bark again");
 	}
