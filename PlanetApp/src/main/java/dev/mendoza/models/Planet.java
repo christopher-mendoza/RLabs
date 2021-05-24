@@ -3,6 +3,8 @@ package dev.mendoza.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import dev.mendoza.exceptions.PlanetHasNoMoonsException;
+
 public class Planet {
 	// Static Variable - specific to the class - same for every instance of the class
 	// Final - once instantiated - can no longer be changed
@@ -80,6 +82,14 @@ public class Planet {
 	public void addMoon(String moonName, int radius, int mass) {
 		Moon newMoon = new Moon(moonName, radius, mass);
 		this.listOfMoons.add(newMoon);
+	}
+	
+	public List<Moon> getMoons() throws PlanetHasNoMoonsException {
+		if(this.listOfMoons == null) {
+			throw new PlanetHasNoMoonsException("This planet has no moons");
+		} else {
+			return this.listOfMoons;
+		}
 	}
 	
 	public void removeMoon(String moonName) {
