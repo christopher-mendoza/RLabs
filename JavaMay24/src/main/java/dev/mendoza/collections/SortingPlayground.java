@@ -85,5 +85,7 @@ public class SortingPlayground {
 			Map.Entry<Integer, String> entry = (Map.Entry) it.next();
 			System.out.println(entry.getKey() + " => " + entry.getValue());
 		}
+		
+		// Collections col = new Collections(); Collections class' constructor is private
 	}
 }
