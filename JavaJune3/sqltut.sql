@@ -58,8 +58,29 @@ CREATE TABLE breeds (
 	breed varchar(30)
 );
 
+-- Person
+CREATE TABLE people (
+	id serial PRIMARY KEY,
+	username varchar UNIQUE NOT NULL,
+	password varchar NOT NULL
+);
+
+-- Add person id in cats
+ALTER TABLE cats
+ADD COLUMN p_id integer;
+-- Put cats list in person 1
+UPDATE cats SET p_id = 1 WHERE id IN (1, 2, 3);
+UPDATE cats SET p_id = 2 WHERE id = 5;
+UPDATE cats SET p_id = 3 WHERE id IN (4, 9);
+UPDATE cats SET p_id = 4 WHERE id IN (6, 7, 8);
+
+ALTER TABLE cats
+ADD CONSTRAINT cat_person_fk
+FOREIGN KEY (p_id) REFERENCES people(id);
+
 ALTER TABLE cats
 DROP CONSTRAINT cats_breed_fk;
+
 -- Create a Foreign Key
 ALTER TABLE cats
 ADD CONSTRAINT cats_breed_fk
@@ -92,6 +113,15 @@ INSERT INTO cats VALUES
 
 SELECT * FROM cats;
 
+
+-- Add people to our table
+INSERT INTO people VALUES
+(default, 'catman', 'meow'),
+(default, 'catperson', 'uwu'),
+(default, 'catcat', 'TvT');
+
+SELECT * FROM people;
+
 /*
  * JOINS
  * are used to combine information across multiple tables
@@ -107,6 +137,7 @@ SELECT * FROM cats;
  * 
  * */
 
+-- Order by
 SELECT * FROM cats 
 LEFT JOIN breeds ON cats.breed = breeds.id;
 
@@ -117,3 +148,23 @@ SELECT c.id, c.name, c.age, b.breed AS cat_breed FROM
 cats c LEFT JOIN breeds b
 ON c.breed = b.id;
 
+SELECT p.id, p.username, p.password, c.id AS cat_id, c.name, c.age, b.id AS breed_id, b.breed 
+FROM people p
+LEFT JOIN cats c ON p.id = c.p_id
+LEFT JOIN breeds b ON c.breed = b.id;
+
+-- Group by
+SELECT b.breed, count(b.breed) FROM cats c LEFT JOIN breeds b
+ON c.breed = b.id GROUP BY b.breed;
+
+-- Stored Procedure
+
+CREATE PROCEDURE add_cat(name varchar, age integer, breed integer, person integer)
+LANGUAGE SQL
+AS $$
+	INSERT INTO cats values(default, name, age, breed, person);
+$$;
+
+DROP PROCEDURE add_cat;
+
+CALL add_cat('Kitty', 5, 2, 2);

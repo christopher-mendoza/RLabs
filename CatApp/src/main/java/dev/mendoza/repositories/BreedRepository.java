@@ -30,13 +30,14 @@ public class BreedRepository implements GenericRepository<Breed> {
 		return MockDB.breeds;
 	}
 
-	public void update(Breed change) {
+	public boolean update(Breed change) {
+		return false;
 //		Integer id = MockDB.breeds.indexOf(change);
 //		change.setId(id);
 	}
 
-	public void delete(Breed b) {
-		MockDB.breeds.remove(b);
+	public boolean delete(Breed b) {
+		return MockDB.breeds.remove(b);
 	}
 
 }

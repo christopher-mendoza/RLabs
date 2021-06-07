@@ -79,15 +79,15 @@ public class BreedDAO implements GenericRepository<Breed>{
 	}
 
 	@Override
-	public void update(Breed change) {
+	public boolean update(Breed change) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
 	@Override
-	public void delete(Breed b) {
+	public boolean delete(Breed b) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
 }

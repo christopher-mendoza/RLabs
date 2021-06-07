@@ -58,14 +58,16 @@ public class CatDAO implements GenericRepository<Cat> {
 	}
 
 	@Override
-	public void update(Cat change) {
+	public boolean update(Cat change) {
 		// TODO Auto-generated method stub
+		return false;
 		
 	}
 
 	@Override
-	public void delete(Cat c) {
+	public boolean delete(Cat c) {
 		// TODO Auto-generated method stub
+		return false;
 		
 	}
 

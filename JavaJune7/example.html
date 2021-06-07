@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- The DOCTYPE declaration
+        Tells the browser what type of file this is
+        and also what version of html
+        The doctype tag does not have a closing tag-->
+
+<html>
+    <!-- This is the root tag/element
+            Everything goes in between this tag.
+            Marks the beginning and end of our web page.-->
+    
+    <head>
+        <!-- The head provides meta-information about the file
+                Includes other elements like the title, charset encoding,
+                and any external references to other files.-->
+        <link rel="stylesheet" href="style.css">
+        <style>
+            h2 { 
+                color: pink;
+            }
+            p {
+                background-color: plum;
+            }
+        </style>
+        <title>Example Web Page</title>
+
+    </head>
+
+    <body>
+        <!-- Content goes here. Data/information that will be displayed-->
+        <h1 style = "border: 10px dotted green">Header</h1>
+        <br>
+        <h2>Header</h2>
+        <h3>Header</h3>
+        <h4>Header</h4>
+        <h5>Header</h5>
+        <h6>Header</h6>
+
+        <p>This is a paragraph.</p><p>This is another paragraph.</p>
+
+    </body>
+
+    <!-- A div tag is a common way to easily separate chunks of code or info-->
+    <div>
+        <p>This paragraph is inside of a <b>div.</b></p>
+    </div>
+
+    <div id = "organizers">
+        <!-- We can create tables and lists with html-->
+        <h3>Favorite Colors</h3>
+        <ul> <!-- Unordered List -->
+            <li style="color: pink">Pink</li>
+            <li style="color: red">Red</li>
+            <li>purple</li>
+            <li>white</li>
+        </ul>
+        <ol> <!-- Ordered List-->
+            <li style="color: pink">Pink</li>
+            <li style="color: red">Red</li>
+            <li>purple</li>
+            <li>white</li>
+        </ol>
+
+        <table>
+            <tr> <!-- Table Row-->
+                <th>Id</th> <!-- Table Header-->
+                <th>Name</th>
+                <th>Age</th>
+                <th>Breed</th>
+            </tr>
+            <tr>
+                <td>1</td> <!-- Table Data-->
+                <td>Fillet</td>
+                <td>24</td>
+                <td>Fisher</td>
+            </tr>
+        </table>
+    </div>
+</html>
