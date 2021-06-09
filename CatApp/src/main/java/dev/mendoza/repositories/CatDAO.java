@@ -16,7 +16,27 @@ public class CatDAO implements GenericRepository<Cat> {
 	
 	@Override
 	public Cat add(Cat c) {
-		// TODO Auto-generated method stub
+		/*
+		@Override
+		public Cat add(Cat c) {
+
+			String sql = "call add_cat(?, ?, ?, ?);";
+			
+			try {
+				PreparedStatement ps = conn.prepareStatement(sql);
+				
+				ps.setString(1, c.getName());
+				ps.setString(2, Integer.toString(c.getAge()));
+				ps.setString(3, Integer.toString(c.getBreed().getId()));
+				ps.setString(4, Integer.toString(1));
+				
+				// execute
+				// iterate
+				// done
+			}
+			
+			return null;
+		} */
 		return null;
 	}
 
