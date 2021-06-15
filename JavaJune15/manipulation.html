@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Manipulation - Event Listener</title>
+    </head>
+
+    <body>
+        <h1 id='ironman'>I am Iron Man!</h1>
+        <h1 id='test' onclick='someFunction()'>Test</h1>
+
+    </body>
+    <script>
+        // This is JavaScript code
+        let ironman = document.getElementById("ironman");
+
+        ironman.addEventListener("click", () => { ironman.innerHTML = 'I am Groot'; });
+
+        ironman.addEventListener("mouseover", () => { ironman.style.color = "red"; });
+        ironman.addEventListener("mouseout", () => { 
+                                                    ironman.innerHTML = 'I am Iron Man!';
+                                                    ironman.style.color = "black";
+                                                });
+
+        function someFunction() {
+            console.log("You clicked the test!");
+        }
+    </script>
+</html>
