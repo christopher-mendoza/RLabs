@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Star Wars - AJAX Call</title>
+    </head>
+
+    <body>
+        <h1>Star Wars</h1>
+        <button onclick='getCharacter()'>Get Character</button>
+    </body>
+    <script>
+        function getCharacter() {
+            console.log('Getting Character...');
+
+            // Making an AJAX Call
+            /**
+             * 2 conditions we want to check for
+             * 1. readyState - gives information about the status of our request.
+             *                  where in the process of the request are we. 
+             * 2. HTTP Status Code - want to check for when the status is 200 (OK)
+             * 
+             * (readyState == 4 && status == 200)
+             * 
+             */
+            // Step 1
+            let xhttp = new XMLHttpRequest();
+
+            // Step 2
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200) {
+                    console.log('Successful call');
+
+                    console.log(this.responseText);
+                    let character = JSON.parse(this.responseText);
+                    console.log(character);
+                }
+            }
+
+            // Step 3
+            xhttp.open("GET", "https://swapi.dev/api/people/1", true); // true = asynchronous function
+
+            // Step 4
+            xhttp.send();
+        }
+    </script>
+</html>

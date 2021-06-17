@@ -54,5 +54,9 @@ function calc(num1, num2, op1, op2) {
         console.log(op2(num1, num2));
     }
 }
-
 calculate(9, 10, add);
+
+// Self-invoking functions
+(function () {
+    console.log("I will be self-invoked!");
+})();

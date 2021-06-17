@@ -1,11 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>dev.mendoza.catapp</groupId>
-  <artifactId>CatApp</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+<?xml version="1.0" encoding="UTF-8"?>
 
-  <name>Cat Application</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>dev.mendoza.catappservlet</groupId>
+  <artifactId>CatAppServlet</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+   <name>Cat Application Servlet</name>
   <!-- FIXME change it to the project's website -->
   <url>http://localhost:8080</url>
   <dependencies>
@@ -45,11 +49,9 @@
     <artifactId>hibernate-core</artifactId>
     <version>5.5.2.Final</version>
 </dependency>
+</dependencies>
 
-		
-  
-  </dependencies>
-<build>
+  <build>
     <finalName>CatAppServlet</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
