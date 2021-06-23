@@ -1,0 +1,39 @@
+/* #navBar {
+    list-style-type:none; 
+    margin:0; 
+    padding:0;
+    color: white;
+    background-color: grey;
+    width: 25%;
+}
+
+#navBar :hover {
+    background-color: orange;
+}
+
+body {
+    margin: 20% 20%;
+}
+
+#logout {
+    list-style-type: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    color:white;
+    background-color: grey;
+}
+
+#logout :hover {
+    background-color: orange;
+}
+
+ul li {
+    padding: 1em;
+} */
+html {
+   size: 100%;
+}
+ body {
+    margin: 20% 20%;
+ }

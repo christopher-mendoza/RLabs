@@ -1,0 +1,55 @@
+<div class='container'>
+    <h4 class='display-4'>Data Binding</h4>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class='border border-primary'>
+        
+                <h3>String Interpolation</h3>
+                <ul>
+                    <li>String Interpolation inserts strings into the text within HTML elements</li>
+                    <li>String Interpolation uses double curly braces and NO QUOTES</li>
+                    <li>{{ interpolatedString }}</li>
+                    <li>{{ interpolatedNumber | currency:'EUR':true }}</li>
+                    <li>{{ interpolatedBoolean }}</li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="col-md-4">
+            <div class="border border-success">
+                <h3>Property Binding</h3>
+                <ul>
+                    <li>Property binding sets an element's property to the value of a Template Expression</li>
+                    <li>The binding target is enclosed in '[]'</li>
+                    <li>The binding source is enclosed in ''</li>
+                    <div class="btn-group">
+                        <input type="button" [class]='btnClass' [value]='btnText'/>
+                        <input type="button" [class]='btnClassDisabled' [value]='btnTextDisabled'/>
+                        <input type="button" [class]='btnClassEnabled' [value]='btnTextEnabled'/>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="border border-warning">
+                <h3>Event Binding</h3>
+                <ul>
+                    <li>Event Binding listens for events and executes a template statement when the event occurs</li>
+                    <li>The target for the event is enclosed in ()</li>
+                    <li>The template statement is enclosed in ''</li>
+                    <li>
+                        <div>
+                            <button [class]='btnClass' (click)='showPicture()'>{{ showButtonText }}</button>
+                            <div *ngIf='isDisplayed'>
+                                <img [src]='imageUrl'>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

@@ -5,6 +5,10 @@ function getData() {
     xhttp.open('GET', url, true);
     xhttp.send();
 
+    // Create a page change
+    function changePage() {
+        window.location.assign('index.html');
+    }
     /**
      * For POST REQUESTS
      * xhttp.open('POST', url, true);
@@ -25,6 +29,7 @@ function getData() {
 
     function receiveData() {
         if(xhttp.readyState == 4 && xhttp.status == 200) {
+            
             let res = xhttp.responseText;
             console.log(res);
 
